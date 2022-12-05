@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section {
+    scroll-margin-top: 6em;
+}
+
+.embla_slide {
+    flex: 0 0 100%;
+}
+
+.svg-link:hover path {
+    fill: #689f38;
+}

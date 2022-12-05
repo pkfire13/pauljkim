@@ -1,0 +1,42 @@
+.markdown {
+  @apply text-lg leading-relaxed;
+}
+
+.markdown p,
+.markdown ol,
+.markdown blockquote {
+  @apply my-4;
+}
+
+.markdown ul {
+  @apply my-4 ml-6 list-disc;
+}
+
+.markdown h2 {
+  @apply text-3xl mt-12 mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown h4 {
+  @apply font-semibold mt-8 mb-4 leading-snug;
+}
+
+.markdown code {
+  @apply bg-gray-200 text-sm rounded text-red-700;
+}
+
+.markdown pre {
+  @apply bg-gray-200 leading-snug p-4 rounded overflow-x-scroll;
+  white-space: pre-wrap;
+}
+
+.markdown a {
+  @apply no-underline hover:underline text-green-700 font-semibold;
+}
+
+.markdown img {
+  @apply border-2 rounded-lg border-gray-200 mt-4;
+}
