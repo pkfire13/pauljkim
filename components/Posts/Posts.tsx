@@ -1,4 +1,5 @@
 import {format } from  "date-fns"
+import Link from "next/link";
 import { PostSummary } from "../../utils/getPosts";
 
 export const Posts = (props: {postsList: PostSummary[] }) => {
@@ -18,9 +19,9 @@ export const Posts = (props: {postsList: PostSummary[] }) => {
             </div>
 
             <div className="text-right">
-                <a href="/posts" className="text-l text-green-700 font-sans font-semibold no-underline hover:underline">
+                <Link href="/posts" className="text-l text-green-700 font-sans font-semibold no-underline hover:underline">
                     All Posts
-                </a>
+                </Link>
             </div>
         </div>
     )

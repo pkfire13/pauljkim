@@ -1,5 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
+import Image from "next/image"
 
 export const Carousel = (props: { imagesList: string[]}) => {
     const options = {
@@ -13,8 +14,8 @@ export const Carousel = (props: { imagesList: string[]}) => {
             <div className="flex">
                 {props.imagesList.map((image) => {
                     const imagePath = "/images/" + image
-                    return <div className="flex justify-center items-center embla_slide">
-                        <img className="border-2 rounded-lg border-gray-200" src={imagePath} />
+                    return <div key={imagePath} className="flex justify-center items-center embla_slide">
+                        <Image alt={image} className="border-2 rounded-lg border-gray-200" src={imagePath} />
                     </div>
                 })}
             </div>

@@ -22,7 +22,7 @@ const postsDirectory = path.join(process.cwd(), "_posts");
 export const getAllPosts = async (): Promise<{ [id: string]: PostFull }> => {
   const postsDirContents = fs.readdirSync(postsDirectory);
 
-  const allPosts = {};
+  const allPosts: any = {};
   postsDirContents.forEach((slug) => {
     const post = getPost(slug);
     allPosts[post.id] = post;
@@ -42,7 +42,7 @@ export const getPostsList = async (): Promise<PostSummary[]> => {
   return posts
 };
 
-export function getPost(id): PostFull {
+export function getPost(id: any): PostFull {
   const realSlug = id.replace(/\.md$/, "");
   const fullPath = path.join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");

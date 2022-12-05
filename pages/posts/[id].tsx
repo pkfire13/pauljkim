@@ -35,7 +35,7 @@ export default function Post(props: {post: PostFull}) {
     )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
     const post = getPost(params.id);
     const content = await markdownToHtml(post.content || "");
 

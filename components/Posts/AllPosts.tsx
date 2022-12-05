@@ -1,9 +1,10 @@
 import { getYear, format } from "date-fns";
+import Link from "next/link";
 import { PostSummary } from "../../utils/getPosts";
 
 export const AllPosts = (props: {posts: PostSummary[]}) => {
 
-    const groupedByYear = groupBy(props.posts, (post) => getYear(new Date(post.date)));
+    const groupedByYear = groupBy(props.posts, (post: any) => getYear(new Date(post.date)));
 
     return (
         <>
@@ -15,12 +16,12 @@ export const AllPosts = (props: {posts: PostSummary[]}) => {
                 {Array.from(groupedByYear.keys()).map((year) => {
                     const postsInYear = groupedByYear.get(year);
                     return (
-                        <div className="mt-8">
+                        <div key={year} className="mt-8">
                             <div className="text-2xl text-gray-400 font-serif">
                                 {year}
                             </div>
                             <div className="mt-2 space-y-2">
-                                {postsInYear.map((post) => {
+                                {postsInYear.map((post: any) => {
                                     return (
                                         <PostEntry key={post.id} post={post} />
                                     )
@@ -37,7 +38,7 @@ export const AllPosts = (props: {posts: PostSummary[]}) => {
 const PostEntry = (props: {post: PostSummary}) => {
     const dateStr = format(new Date(props.post.date), "MMM dd");
     return (
-        <a href={props.post.link}
+        <Link href={props.post.link}
         className="flex flex-row items-center no-underline hover:underline font-sans font-semibold">
             <div className="text-left w-20 md:w-32">
                 {dateStr}
@@ -45,13 +46,13 @@ const PostEntry = (props: {post: PostSummary}) => {
             <div className="flex flex-1">
                 {props.post.title}
             </div>
-        </a>
+        </Link>
     )
 }
 
-const groupBy = (list, keyGetter) => {
+const groupBy = (list: any, keyGetter:any) => {
     const map = new Map();
-    list.forEach((item) => {
+    list.forEach((item: any) => {
         const key = keyGetter(item);
         const collection = map.get(key);
         if(!collection) {
