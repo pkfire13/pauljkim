@@ -15,7 +15,7 @@ export const Carousel = (props: { imagesList: string[]}) => {
                 {props.imagesList.map((image) => {
                     const imagePath = "/images/" + image
                     return <div key={imagePath} className="flex justify-center items-center embla_slide">
-                        <Image alt={image} className="border-2 rounded-lg border-gray-200" src={imagePath} />
+                        <Image width='600' height='600' alt={image} className="border-2 rounded-lg border-gray-200" src={imagePath} />
                     </div>
                 })}
             </div>

@@ -38,7 +38,7 @@ const Project = (props: {project: IProject}) => {
         <div className="flex flex-row font-sans">
             <Link href={props.project.links[0].href}
             className="w-20 h-20 md:w-40 md:h-40 lg:w-64 lg:h-44 rounded-md overflow-hidden opacity-100 hover:opacity-80">
-                <Image className="h-full w-full object-cover" src={props.project.previewImage} alt={props.project.title} />
+                <Image width={300} height={300} className="w-full h-full object-cover" src={props.project.previewImage} alt={props.project.title} />
             </Link>
             <div className="flex flex-1 flex-col justify-center space-y-1 ml-4 md:ml-8 ">
                 <div className="text-l md:text-xl font-semibold">
